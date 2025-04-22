@@ -1,0 +1,29 @@
+.corpo {
+  font-family: 'Arial', sans-serif;
+  background-color: #000;  /* Fundo preto */
+  color: #fff;             /* Texto branco */
+  margin: 0;
+  padding: 0;
+}
+
+.custom-navbar {
+  background-color: #124b65; /* Azul escuro */
+  padding: 20px 0;
+}
+
+/* Logo à esquerda */
+.logo img {
+  max-width: 250px;
+  height: auto;
+}
+
+/* Links em linha à direita */
+.navbar-nav {
+  gap: 20px;                  /* Espaço entre os links */
+}
+
+.navbar-nav .nav-link {
+  color: white !important;    /* Cor branca para os links */
+  font-size: 1.2rem;
+  padding: 0 10px;            /* Espaço interno nos links */
+}
