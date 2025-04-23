@@ -2,12 +2,14 @@ name: Deploy on bohr.io
 
 on:
   push:
-    branches: [main]  # Roda o deploy quando houver push na branch "main"
+    branches: [main]
+    paths:
+      - 'front/**'         # Só dispara o deploy se arquivos dentro de "front/" forem alterados
   repository_dispatch:
-    types: [bohr-dispatch]  # Permite deploys manuais via API do GitHub
+    types: [bohr-dispatch]
 
 permissions:
-  contents: write  # Permissão necessária para ações que interagem com o repositório
+  contents: write
 
 jobs:
   deploy:
