@@ -1,14 +1,22 @@
-name: bohr.io deploy
-on: 
+name: Deploy on bohr.io
+
+on:
   push:
-    branches: [main]  # Corrigido de "ranches" para "branches"
+    branches: [main]  # Roda o deploy quando houver push na branch "main"
   repository_dispatch:
-    types: [bohr-dispatch]
-permissions: write-all
+    types: [bohr-dispatch]  # Permite deploys manuais via API do GitHub
+
+permissions:
+  contents: write  # Permissão necessária para ações que interagem com o repositório
+
 jobs:
   deploy:
     name: Deploy on bohr.io
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: bohr-io/action@main
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Deploy com ação do Bohr
+        uses: bohr-io/action@main
