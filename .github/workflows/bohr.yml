@@ -1,0 +1,24 @@
+name: Deploy on bohr.io
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'front/**'         # Só dispara o deploy se arquivos dentro de "front/" forem alterados
+  repository_dispatch:
+    types: [bohr-dispatch]
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    name: Deploy on bohr.io
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Deploy com ação do Bohr
+        uses: bohr-io/action@main

@@ -1,0 +1,170 @@
+/* CONTAINER PRINCIPAL */
+.container-vantagens {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px; /* Reduzido para mobile */
+  }
+  
+  /* ESTILO BASE PARA CADA BOX DE VANTAGEM */
+  .vantagem {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 25px 30px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    border-left: 4px solid #0066cc;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 20px;
+    align-items: center;
+    min-height: 120px;
+  }
+  
+  /* ESTADO ATIVO */
+  .vantagem.ativa {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  /* DELAYS E CORES DAS BORDAS */
+  .vantagem:nth-child(1) { transition-delay: 0.1s; }
+  .vantagem:nth-child(2) { transition-delay: 0.3s; border-left-color: #0099ff; }
+  .vantagem:nth-child(3) { transition-delay: 0.5s; border-left-color: #00ccff; }
+  .vantagem:nth-child(4) { transition-delay: 0.7s; border-left-color: #ff6600; }
+  
+  /* ESTILO DO NÚMERO */
+  .vantagem .numero {
+    font-size: 52px;
+    font-weight: 800;
+    color: #0066cc;
+    line-height: 0.9;
+    margin: 0;
+    align-self: center;
+    text-align: center;
+  }
+  
+  /* ESTILO DO TÍTULO */
+  .vantagem .titulo {
+    color: #0066cc;
+    font-size: 24px;
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.1;
+    align-self: center;
+    text-align: center;
+  }
+  
+  /* CONTAINER ESQUERDO */
+  .vantagem .left-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  /* ESTILO DO TEXTO */
+  .vantagem .texto {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 500;
+    padding: 10px 0;
+    align-self: center;
+  }
+  
+  /* EFEITO HOVER */
+  .vantagem:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* ============ RESPONSIVIDADE ============ */
+  
+  /* TABLETS (768px para baixo) */
+  @media (max-width: 768px) {
+    .container-vantagens {
+      padding: 0 10px;
+    }
+    
+    .vantagem {
+      grid-template-columns: 1fr;
+      padding: 20px;
+      min-height: auto;
+      gap: 15px;
+    }
+    
+    .vantagem .left-content {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+    
+    .vantagem .numero {
+      font-size: 42px;
+      line-height: 1;
+    }
+    
+    .vantagem .titulo {
+      font-size: 20px;
+      text-align: left;
+    }
+    
+    .vantagem .texto {
+      font-size: 16px;
+      text-align: center;
+      padding: 0;
+    }
+  }
+  
+  /* CELULARES (480px para baixo) */
+  @media (max-width: 480px) {
+    .vantagem {
+      padding: 15px;
+    }
+    
+    .vantagem .left-content {
+      gap: 10px;
+    }
+    
+    .vantagem .numero {
+      font-size: 36px;
+    }
+    
+    .vantagem .titulo {
+      font-size: 18px;
+    }
+    
+    .vantagem .texto {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+  }
+  
+  /* CELULARES PEQUENOS (360px para baixo) */
+  @media (max-width: 360px) {
+    .vantagem .left-content {
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .vantagem .numero {
+      font-size: 32px;
+    }
+    
+    .vantagem .titulo {
+      font-size: 16px;
+      text-align: center;
+    }
+    
+    .vantagem .texto {
+      font-size: 14px;
+    }
+  }
